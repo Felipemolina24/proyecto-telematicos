@@ -36,4 +36,14 @@ Vagrant.configure("2") do |config|
 
   end
 
+ # Configuración del servidor Firewall
+  config.vm.define :firewall do |firewall|
+    firewall.vm.box = "bento/ubuntu-22.04"
+    firewall.vm.network :private_network, ip: "192.168.50.4"
+    firewall.vm.hostname = "firewall"
+
+    firewall.vm.boot_timeout = 600
+
+  end
+
 end
